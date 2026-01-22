@@ -1,0 +1,171 @@
+:root {
+  --bg: #f4f7fb;
+  --text: #222;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f5f5f5;
+}
+
+body {
+   body {
+  margin-top: 80px;   
+}
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI';
+  transition: 0.4s;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #0b0b0b;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+
+header nav a, button {
+  margin-left: 15px;
+}
+
+.hero {
+  height: calc(100vh - 80px); /* header ka space minus */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("./images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+  padding: 80px;
+}
+
+.dest-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.dest-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: 0.8s;
+}
+
+.dest-card:hover img {
+  transform: scale(1.15);
+}
+
+.dest-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+
+.contact-box {
+  background: var(--card);
+  padding: 40px;
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.contact-box h2 {
+  margin-bottom: 20px;
+}
+
+.contact-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.contact-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #ffffff;   /* WHITE BUTTON */
+  color: #000000;        /* BLACK TEXT */
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-box button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 500px;
+  margin: 100px auto;
+  border-radius: 15px;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+}
